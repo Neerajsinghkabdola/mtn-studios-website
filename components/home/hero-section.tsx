@@ -97,14 +97,27 @@ export function HeroSection() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in animation-delay-600">
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-xs uppercase tracking-widest text-muted-foreground">Scroll</span>
-            <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center pt-2">
-              <div className="w-1.5 h-1.5 bg-muted-foreground rounded-full animate-bounce" />
+        <button
+          onClick={() => {
+            const nextSection = document.getElementById('services-section')
+            if (nextSection) {
+              nextSection.scrollIntoView({ behavior: 'smooth' })
+            }
+          }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in animation-delay-600 group cursor-pointer focus:outline-none"
+          aria-label="Scroll to next section"
+        >
+          <div className="flex flex-col items-center gap-2 relative">
+            {/* Tooltip */}
+            <span className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs font-medium text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+              Discover more
+            </span>
+            <span className="text-xs uppercase tracking-widest text-muted-foreground group-hover:text-foreground transition-colors duration-300">Scroll</span>
+            <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center pt-2 group-hover:border-primary/50 transition-colors duration-300">
+              <div className="w-1.5 h-1.5 bg-muted-foreground rounded-full animate-bounce group-hover:bg-primary transition-colors duration-300" />
             </div>
           </div>
-        </div>
+        </button>
       </div>
     </section>
   )
