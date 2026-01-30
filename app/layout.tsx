@@ -22,21 +22,8 @@ export const metadata: Metadata = {
   keywords: ['creative agency', 'digital studio', 'branding', 'content creation', 'web design', 'video production'],
   authors: [{ name: 'MTN Studios' }],
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/favicon.png',
+    apple: '/favicon.png',
   },
   openGraph: {
     title: 'MTN Studios | Creative & Digital Agency',
