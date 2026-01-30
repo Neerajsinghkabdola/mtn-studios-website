@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
@@ -42,17 +43,16 @@ export function Navigation() {
           {/* Logo */}
           <Link 
             href="/" 
-            className="group flex items-center gap-2 transition-transform duration-300 hover:scale-105"
+            className="group flex items-center transition-transform duration-300 hover:scale-105"
           >
-            <div className="relative">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">M</span>
-              </div>
-              <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            <span className="font-serif text-xl font-semibold text-foreground tracking-tight">
-              MTN Studios
-            </span>
+            <Image
+              src="/logo.png"
+              alt="MTN Studios"
+              width={140}
+              height={50}
+              className="h-10 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

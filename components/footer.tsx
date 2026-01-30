@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowUpRight, Mail, Instagram } from "lucide-react"
 
 const footerLinks = {
@@ -27,13 +28,14 @@ export function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-5">
-            <Link href="/" className="inline-flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-background rounded-lg flex items-center justify-center">
-                <span className="text-foreground font-bold text-xl">M</span>
-              </div>
-              <span className="font-serif text-2xl font-semibold text-background">
-                MTN Studios
-              </span>
+            <Link href="/" className="inline-block mb-6">
+              <Image
+                src="/logo.png"
+                alt="MTN Studios"
+                width={160}
+                height={60}
+                className="h-12 w-auto object-contain brightness-0 invert"
+              />
             </Link>
             <p className="text-background/70 text-lg leading-relaxed max-w-md mb-8">
               We help brands scale through cinematic content, strategic design, and high-performance digital experiences.
